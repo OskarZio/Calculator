@@ -1,0 +1,29 @@
+$bg-color: hsl(222, 26%, 31%);
+$text-one-color: hsl(0, 0%, 100%);
+$bg-toggle-container: hsl(223, 31%, 20%);
+$toggle-btn: hsl(6, 63%, 50%);
+$label-color: hsl(224, 36%, 15%);
+$del-reset-shadow-color: hsl(224, 28%, 35%);
+$del-reset-bg-color: hsl(225, 21%, 49%);
+$text-two-color: hsl(221, 14%, 31%);
+$bg-option: hsl(30, 25%, 89%);
+$shadow-option: hsl(28, 16%, 65%);
+$bg-equal-btn: hsl(6, 63%, 50%);
+$shadow-bg-equal-btn: hsl(6, 70%, 34%);
+$test: rgb(151, 235, 26);
+
+:export {
+	bgColor: $bg-color;
+	textOneColor: $text-one-color;
+	bgToggleContainer: $bg-toggle-container;
+	toggleBtn: $toggle-btn;
+	labelColor: $label-color;
+	delResetShadowColor: $del-reset-shadow-color;
+	delResetBgColor: $del-reset-bg-color;
+	textTwoColor: $text-two-color;
+	bgOption: $bg-option;
+	shadowOption: $shadow-option;
+	bgEqualBtn: $bg-equal-btn;
+	shadowBgEqualBtn: $shadow-bg-equal-btn;
+    test: $test;
+}
