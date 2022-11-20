@@ -7,7 +7,7 @@ const buttons = document.getElementsByClassName('calc__button')
 const arr = [...buttons]
 let root = document.documentElement
 let str = '0'
-
+let dotNumber = 0
 arr.forEach((element, index) => {
 	element.addEventListener('click', () => {
 		element.style.opacity = '1'
@@ -25,6 +25,7 @@ arr.forEach((element, index) => {
 			root.style.setProperty('--shadow-option', ' hsl(28, 16%, 65%)')
 			root.style.setProperty('--bg-equal-btn', ' hsl(6, 63%, 50%)')
 			root.style.setProperty('--shadow-bg-equal-btn', 'hsl(6, 70%, 34%)')
+			equalBtn.style.setProperty('color', 'hsl(0, 0%, 100%)')
 		} else if (index == 1) {
 			root.style.setProperty('--bg-color', 'hsl(0, 0%, 90%)')
 			root.style.setProperty('--text-one-color', 'hsl(60, 10%, 19%)')
@@ -87,6 +88,7 @@ const addOption = e => {
 		e.target.textContent === '-' ||
 		e.target.textContent === '/'
 	) {
+		dotNumber = 0
 		if (str[0] === '-' && str.length === 1) {
 			console.error('insert value')
 		} else if (
@@ -131,8 +133,16 @@ const addOption = e => {
 			str = e.target.textContent
 		} else if (typeof str === 'number') {
 			str = '0'
-		} else if (str[str.length - 1] === '0') {
-			str.replace('0', e.target.textContent)
+		} else if (str[str.length - 1] === '0' && str[str.length - 2] === ' ') {
+			str += '.'
+			dotNumber += 1
+		} else if(e.target.textContent === '.' && str[str.length - 1] === '.') {
+			console.error('insert value')
+		} else if (dotNumber === 1 && e.target.textContent === '.') {
+			console.error('insert value')
+		} else if (e.target.textContent === '.') {
+			str += '.'
+			dotNumber += 1
 		} else {
 			str += e.target.textContent
 		}
